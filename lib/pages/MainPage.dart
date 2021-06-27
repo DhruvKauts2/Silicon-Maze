@@ -26,7 +26,11 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
+      showSemanticsDebugger: false,
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: Container(
           child: ListView.builder(
               itemCount: finalTitle.length,
@@ -41,9 +45,11 @@ class _MainPageState extends State<MainPage> {
                     }
                   },
                   child: Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.only(bottom: 7.5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                        border: Border.all(width: 20, color: Colors.white)),
+                        border: Border.all(width: 3, color: Colors.white)),
                     child: Column(
                       children: [
                         Wrap(
@@ -52,22 +58,11 @@ class _MainPageState extends State<MainPage> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Text(
-                                  finalIntroduction[index],
-                                  style: GoogleFonts.exo2(
-                                      textStyle: TextStyle(
-                                          fontWeight: FontWeight.bold)),
-                                ),
                                 Stack(
+                                  alignment: Alignment.center,
                                   children: [
                                     Container(
-                                      decoration: BoxDecoration(boxShadow: [
-                                        BoxShadow(
-                                            color: Colors.grey.withOpacity(0.8),
-                                            spreadRadius: 10,
-                                            blurRadius: 50,
-                                            offset: Offset(0, 0)),
-                                      ]),
+                                      decoration: BoxDecoration(boxShadow: []),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(40),
                                         child: Image(
@@ -107,7 +102,7 @@ class _MainPageState extends State<MainPage> {
                                           ),
                                           Text(
                                             finalAuthor[index] +
-                                                ' | ' +
+                                                '    |    ' +
                                                 finalDate[index],
                                             style: GoogleFonts.exo2(),
                                             textAlign: TextAlign.right,
@@ -117,11 +112,22 @@ class _MainPageState extends State<MainPage> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 40),
-                                Text(
-                                  '____________________________________________________',
-                                  textAlign: TextAlign.center,
+                                Container(
+                                  margin: EdgeInsets.only(top: 5),
+                                  decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(20)),
+                                      border: Border.all(
+                                          width: 1, color: Colors.white)),
+                                  child: Text(
+                                    finalIntroduction[index],
+                                    style: GoogleFonts.exo2(
+                                        textStyle: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold)),
+                                  ),
                                 ),
+                                SizedBox(height: 20),
                               ],
                             )
                           ],
