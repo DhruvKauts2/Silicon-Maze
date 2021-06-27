@@ -1,16 +1,12 @@
-# silicon
+Problem name: Unified Blogs App
 
-A new Flutter project.
+Features implemented: (1)Fetches data from the 3 websites mentioned in the problem statement.
+                      (2)Displays info such as Title, introduction, publication, date,etc along with image
+                      (3)Redirects user to the original website hosting the blog entry on which they tapped.
+                      
+Tech Stack: Flutter, dart
 
-## Getting Started
+Setup Instructions: Install Flutter SDK, java development kit and android studio(optional).
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
